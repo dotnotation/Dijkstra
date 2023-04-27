@@ -13,3 +13,8 @@ Dijkstra's Algorithm
         - physicist, essayist
         - one of the most influential, cited, and used research
         - known for DJP, call stack, Guarded Command Language, weakest precondition calculus, separation of concerns, software architecture, concurrent programming, multithreaded programming, structured programming, and so much more 
+    - what is it used for?
+        - maps! GPS
+        - Biology (think spread of viruses)
+        - cheapest Airline tickets
+        - network routing 
