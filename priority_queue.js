@@ -9,10 +9,15 @@ class PriorityQueue{
     }
     
     dequeue(){
+        // returns smallest value
         return this.values.shift()
     }
 
     sort(){
         this.values.sort((a, b) => a.priority - b.priority)
     }
+
+    // because we are sorting it is O(N * log(N))
+    // this is very basic and not the most efficient 
+    // see binary heap for a better version
 }
