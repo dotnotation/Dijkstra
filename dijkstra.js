@@ -12,6 +12,7 @@ function dijkstra(start, end){
     const nodes = new PriorityQueue()
     const distances = {}
     const previous = {}
+    let smallest 
 
     for (let vertex in this.adjacencyList){
         // add each vertex with a priority of infinity to the priority queue
@@ -28,13 +29,22 @@ function dijkstra(start, end){
         previous[vertex] = null
         // set keys to be every vertex in adjacency list with a value of null
     }
+
+    while (nodes.values.length){
     // start looping as long as anything is in the priority queue
+        smallest = nodes.dequeue().val
         // dequeue a vertex 
-        // if that vertex is the same as the ending vertex, done
+        if (smallest === end){
+            // if that vertex is the same as the ending vertex, done
+        }
+
+        if (smallest || distances[smallest] !== Infinity){
         // otherwise loop through the adjacency list at that vertex
             // calculate the distance to that vertex from the starting vertex
             // if the distance is less that what is currently stored
                 // update the distance
                 // update the previous object
                 // enqueue the vertex with the total distance from the start node
+        }
+    }
 }   
