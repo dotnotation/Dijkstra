@@ -36,6 +36,11 @@ function dijkstra(start, end){
         // dequeue a vertex 
         if (smallest === end){
             // if that vertex is the same as the ending vertex, done
+            while(previous[smallest]){
+                path.push(smallest)
+                smallest = previous[smallest]
+            }
+            break
         }
 
         if (smallest || distances[smallest] !== Infinity){
@@ -56,5 +61,6 @@ function dijkstra(start, end){
                 }
             }
         }
+        return path.concat(smallest).reverse()
     }
 }   
