@@ -7,18 +7,27 @@
 // This will give us a data structure with the shortest path to all nodes
     // not used the ones you are trying to calculate
 
-function dijkstra(start, end)
+function dijkstra(start, end){
     // takes in starting and ending vertex
     const nodes = new PriorityQueue()
-    // add each vertex with a priority of infinity to the priority queue
-        // except for start = 0 
-    // create an object called distances
+    const distances = {}
+    const previous = {}
+
+    for (let vertex in this.adjacencyList){
+        // add each vertex with a priority of infinity to the priority queue
+            // except for start = 0 
         // set each key to be every vertex in the adjacency list with a value of infinity
             // except for the starting vertex = 0
-    const distances = {}
-    // create another object called previous
+        if (vertex === start) {
+            distances[vertex] = 0
+            nodes.enqueue(vertex, 0)
+        } else {
+            distances[vertex] = Infinity
+            nodes.enqueue(vertex, Infinity)
+        }
+        previous[vertex] = null
         // set keys to be every vertex in adjacency list with a value of null
-    const previous = {}
+    }
     // start looping as long as anything is in the priority queue
         // dequeue a vertex 
         // if that vertex is the same as the ending vertex, done
@@ -28,4 +37,4 @@ function dijkstra(start, end)
                 // update the distance
                 // update the previous object
                 // enqueue the vertex with the total distance from the start node
-    
+}   
