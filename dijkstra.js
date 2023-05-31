@@ -40,11 +40,21 @@ function dijkstra(start, end){
 
         if (smallest || distances[smallest] !== Infinity){
         // otherwise loop through the adjacency list at that vertex
-            // calculate the distance to that vertex from the starting vertex
-            // if the distance is less that what is currently stored
-                // update the distance
-                // update the previous object
-                // enqueue the vertex with the total distance from the start node
+            for (let neighbor in this.adjacencyList[smallest]){
+                let nextNode = this.adjacencyList[smallest][neighbor]
+                let candidate = distances[smallest] + nextNode.weight
+                let nextNeighbor = nextNode.node
+                // calculate the distance to that vertex from the starting vertex
+                if (candidate < distances[nextNeighbor]){
+                // if the distance is less that what is currently stored
+                    distances[nextNeighbor] = candidate
+                    // update the distance
+                    previous[nextNeighbor] = smallest
+                    // update the previous object
+                    nodes.enqueue(nextNeighbor, candidate)
+                    // enqueue the vertex with the total distance from the start node
+                }
+            }
         }
     }
 }   
